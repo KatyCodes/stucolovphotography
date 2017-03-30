@@ -1,0 +1,222 @@
+h1, h2, h3, h4, h5 {
+  font-family: 'Arvo', serif;
+  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.93);
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+}
+
+#arrow, #arrow1 {
+  position: fixed;
+}
+
+#intro-banner {
+  text-align: center;
+  position: absolute;
+  z-index: 10;
+  top: 0px;
+  left: 60px;
+}
+
+form {
+  position: relative;
+  top: 100px;
+}
+
+#contact > form > button {
+  background: white;
+}
+body {
+  position: relative;
+  left: 0px;
+  background:rgba(0,0,0,0.05);
+}
+
+#about-page-photo img{
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  padding: 10px;
+  top: 144px;
+  z-index: 100;
+  color: ivory;
+  position: absolute;
+}
+
+#contact {
+  background-image: url("../images/sky.jpg");
+  background-size: cover;
+  height: 700px;
+}
+#portfolio {
+  position: fixed;
+  bottom: 17px;
+}
+#portfolio-photo img {
+  width:540px;
+  height: auto;
+}
+
+#owl-portfolio {
+  max-width: 75%;
+  margin: 2% 5%;
+}
+
+body > div.owl-carousel.owl-theme.owl-loaded.owl-drag > div.owl-nav {
+  font-size: 40px;
+}
+
+body > div.owl-carousel.owl-theme.owl-loaded.owl-drag > div.owl-nav > div.owl-next > i {
+  position: absolute;
+  top: 377px;
+  left: 32px;
+  color: white;
+  opacity: .4;
+}
+
+.thumbnail{
+  height: 200px;
+  /*width: 80%;*/
+  overflow: hidden;
+  position: relative;
+}
+
+/*.portfolio-main-display {
+  max-height: 70%;
+  position: relative;
+  top: 0px;
+  left: 5%;
+}*/
+body > div.owl-carousel.owl-theme.owl-loaded.owl-drag > div.owl-nav > div.owl-prev > i {
+  position: absolute;
+  top: 377px;
+  right: 32px;
+  color: white;
+  opacity: 0.4;
+}
+
+
+.c-hamburger {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 34px;
+  height: 26px;
+  font-size: 0;
+  text-indent: -9999px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.c-hamburger:focus {
+  outline: none;
+}
+
+.c-hamburger span {
+  display: block;
+  position: absolute;
+  top: 7px;
+  left: 3px;
+  right: 3px;
+  height: 1px;
+  background: white;
+}
+
+.c-hamburger span::before,
+.c-hamburger span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  content: "";
+}
+
+.c-hamburger span::before {
+  top: 6px;
+}
+
+.c-hamburger span::after {
+  bottom: -12px;
+}
+
+.c-hamburger {
+  background-color: black;
+  position: absolute;
+  top: 9px;
+  right: 10px;
+  z-index: 2000;
+  opacity: .6;
+}
+
+.c-hamburger span {
+  transition: background 0s 0.2s;
+}
+
+.c-hamburger span::before,
+.c-hamburger span::after {
+  transition-duration: 0.2s, 0.2s;
+  transition-delay: 0.2s, 0s;
+}
+
+.c-hamburger span::before {
+  transition-property: top, transform;
+}
+
+.c-hamburger span::after {
+  transition-property: bottom, transform;
+}
+
+/* active state, i.e. menu open */
+.c-hamburger.is-active {
+  background-color: black;
+}
+
+.c-hamburger.is-active span {
+  background: none;
+}
+
+.c-hamburger.is-active span::before {
+  top: 5px;
+  transform: rotate(45deg);
+}
+
+.c-hamburger.is-active span::after {
+  bottom: -5px;
+  transform: rotate(-45deg);
+}
+
+.c-hamburger.is-active span::before,
+.c-hamburger.is-active span::after {
+  transition-delay: 0s, 0.2s;
+}
+
+.navigation-menu {
+  display: none;
+  float: right;
+  position: fixed;
+  right: 90px;
+  max-width: 200px;
+  white-space: pre-wrap;
+  padding: 10px;
+  font-family: 'Raleway', sans-serif;
+}
+
+#navlist {
+  list-style-type: none;
+}
+
+#intro-banner a:-webkit-any-link {
+  text-decoration: none !important;
+  color: black;
+}
