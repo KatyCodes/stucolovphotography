@@ -1,59 +1,86 @@
 $(document).ready(function(){
 
-  $('.thumbnail').click(function(){
-    var source = ($(this).attr('src'));
-    $('.portfolio-main-display').attr('src', source);
-      win_width = $(document).innerWidth();
-      win_height = $(window).height();
-      picture_width = $('.portfolio-main-display').attr('src', source).width();
-      picture_height = win_height - 250;
-      picture_margin = (win_width - picture_width) / 2;
-      $('.portfolio-main-display').css({
-        'margin-left': picture_margin + 'px',
-        'max-width' : win_width + 'px',
-        'max-height': picture_height + 'px',
-      });
-    });
+  setTimeout(function() {
+    $('#main-logo').delay(300).animate({
+      'opacity': '1','top':'0%','left': '0%',}, 500);
+  },500);
+
+
+  $(window).scroll(function() {
+    wH = $(window).height();
+    wS = $(window).scrollTop();
+
+    // portfolio page animation
+    hTc = $('#front-page-carousel').offset().top;
+    hHc = $('#front-page-carousel').outerHeight() - 200;
+    hWc = $('#front-page-carousel').width();
+
+    $('.portfolio-text-overlay').css({
+       'max-width': hWc + 'px',
+     });
+
+    if(wS > (hTc+hHc-wH)){
+     $('.portfolio-text-overlay').animate({
+       'top': '150px',
+       'opacity': '1',
+     },1000, 'linear');
+   }
+  //  else if (wS < (hTc+hHc-wH)) {
+  //     $('.portfolio-text-overlay').stop(true, true).animate({
+  //      'top': '0px',
+  //      'opacity': '0',
+  //    });
+  // };
+
+   //about page animation
+   hTa = $('#about').offset().top;
+   hTa = $('#about').outerHeight() + 300;
+   hWa = $('#about').width();
+   if(wS > (hTa+hTa-wH)){
+     $('#about h2').animate({
+       'top': '250px',
+       'opacity': '1',
+     },1000, 'linear' );
+     $('#about p').animate({
+       'top': '150px',
+       'opacity': '1',
+     }, 1000, 'linear');
+  }
+  // else if(wS < (hTa+hTa-wH)) {
+  //     $('#about *').stop(true, true).animate({
+  //       'top': '0px',
+  //       'opacity': '0',
+  //     }, 1000, 'linear');
+  //  }
+});
+
+  win_height = $(window).height();
+  photo_height = win_height + 100;
+  $('.owl-item.front').css({
+    'max-height': win_height + 'px',
+  });
+  $('#front-page-carousel').css({
+    'max-height': win_height + 'px',
+  });
+
+  $('#intro').css({
+    'height': win_height + 'px',
+  });
+  $('#about').css({
+    'height': win_height + 'px',
+  });
 
   //owl carousel
   $('#front-page-carousel').owlCarousel({
       loop:true,
       items: 1,
-      // center: true,
+      center: true,
       nav:true,
-      autoplay:true,
-      autoplayTimeout: 5000,
-      navText: ["<i class='fa fa-arrow-circle-right'></i>",
-      "<i class='fa fa-arrow-circle-left'></i>"]
-  });
-
-
-  $('.c-hamburger').click(function() {
-    if(this.classList.contains("is-active") == true) {
-      this.classList.remove("is-active");
-      $(".navigation-menu").hide();
-      $('body').animate({'left':'+=200px'}, {queue: false, duration: 500});
-      $('.c-hamburger').animate({'right' : '+40px'}, {queue: false, duration: 500})
-
-    } else {
-      this.classList.add('is-active');
-      $(".navigation-menu").show();
-      $('body').animate({'left':'-=200px'}, {queue: false, duration: 500});
-      $('.c-hamburger').animate({'right' : '-40px'}, {queue: false, duration: 500})
-    }
-  });
-
-  $('#portfolio').owlCarousel({
-    loop:true,
-    nav:true,
-    center: false,
-    // autoplay:true,
-    autoLoad: true,
-    // autoWidth: false,
-    margin: 10,
-    autoplayTimeout: 5000,
-      navText: ["<i id='arrow' class='fa fa-arrow-circle-right'></i>",
-     "<i id='arrow1' class='fa fa-arrow-circle-left'></i>"]
+      // autoplay:true,
+      autoHeight:false,
+      // autoplayTimeout: 5000,
+      navText: ["<span class='lnr lnr-chevron-right'></span>",
+      "<span class='lnr lnr-chevron-left'></span>"]
   });
 
 
